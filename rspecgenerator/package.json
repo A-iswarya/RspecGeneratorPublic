@@ -1,0 +1,55 @@
+{
+  "name": "rspecgenerator",
+  "displayName": "RspecGenerator",
+  "description": "Rspec Generator",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rspecgenerator.generate",
+        "title": "Generate Rspec"
+      },
+      {
+        "command": "rspecgenerator.generateDataset",
+        "title": "Generate Dataset"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "rspecgenerator.generate",
+          "group": "YourGroup@1",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "rspecgenerator.generateDataset",
+          "group": "YourGroup@1",
+          "when": "editorTextFocus"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.92.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "axios": "^0.21.4",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  }
+}
